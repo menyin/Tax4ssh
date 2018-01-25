@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Tax4ssh:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tax4ssh_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Tax4ssh/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Tax4ssh" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="hibernate" module-name="Tax4ssh" />
+          <element id="library" level="module" name="struts2" module-name="Tax4ssh" />
+          <element id="library" level="module" name="spring-aop" module-name="Tax4ssh" />
+          <element id="library" level="module" name="spring-core" module-name="Tax4ssh" />
+          <element id="library" level="module" name="spring-orm" module-name="Tax4ssh" />
+          <element id="library" level="module" name="spring-web" module-name="Tax4ssh" />
+          <element id="library" level="module" name="jstl" module-name="Tax4ssh" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
