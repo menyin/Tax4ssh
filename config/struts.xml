@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 二、总配置文件：引入其他所有配置文件 -->
+	<include file="struts-cfg.xml"></include>
+
+
+	 <!--sturt2 base test. begin-->
+	<package name="test" namespace="/" extends="struts-default" abstract="false">
+		<!--<default-class-ref class="test.StrutsTest"/>-->
+		<!--<default-action-ref name="struts_test" />-->
+		<action name="struts_test" class="strutsTest" method="index">
+			<result name="index">/index.jsp</result>
+		</action>
+
+	</package>
+	<!--sturt2 base test. end-->
+
+</struts>
