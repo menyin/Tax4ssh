@@ -101,9 +101,11 @@
 	</aop:config>
 
 	<!-- IOC容器的配置： 要创建的所有的对象都配置在这里 引入其他配置文件-->
-	<import resource="cny/dao/bean-dao.xml"/>
+	<!--<import resource="cny/dao/bean-dao.xml"/>
 	<import resource="cny/service/bean-service.xml"/>
 	<import resource="cny/controller/bean-controller.xml"/>
+	-->
+    <import resource="ssh/bean-test.xml"/>
 
 	<!-- ###########Spring与Hibernate整合  end########### -->
 

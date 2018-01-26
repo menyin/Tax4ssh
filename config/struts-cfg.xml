@@ -15,7 +15,9 @@
 	<!--开发模式下使用,这样可以打印出更详细的错误信息-->
 	<constant name="struts.devMode" value="true" />
 	<!-- 3. 开启动态方法调用 (默认不开启)-->
-	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 	<!-- 4. 修改上传文件的最大大小为30M -->
 	<constant name="struts.multipart.maxSize" value="31457280"/>
+	<!-- 5.主题配置 -->
+	<constant name="struts.ui.theme" value="simple" />
 </struts>
