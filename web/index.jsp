@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <h4>${requestScope.request_data}</h4>
   </body>
 </html>
