@@ -1,0 +1,5 @@
+2018-01-26 10:52:32,707 [main] DEBUG  console.TestLog4j - 社会主义好宝宝
+2018-01-26 10:52:32,722 [main] ERROR  console.TestLog4j - / by zero
+2018-01-26 10:52:32,722 [main]  INFO  console.TestLog4j - / by zero
+2018-01-26 10:52:32,723 [main]  WARN  console.TestLog4j - / by zero
+2018-01-26 10:52:32,723 [main] FATAL  console.TestLog4j - / by zero
