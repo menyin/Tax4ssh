@@ -7,17 +7,23 @@
 
 	<!-- 二、总配置文件：引入其他所有配置文件 -->
 	<include file="struts-cfg.xml"></include>
+	<!--<include file="com/cny/nsfw/user/conf/user-struts.xml"></include>-->
+	<!--<include file="com/cny/nsfw/*/conf/*-struts.xml"></include>
+	<include file="com/cny/home/conf/*-struts.xml"></include>
+	<include file="com/cny/login/conf/*-struts.xml"></include>-->
+	<include file="com/cny/*/conf/*-struts.xml"></include>
+	<include file="com/cny/*/*/conf/*-struts.xml"></include>
 
 
 	 <!--sturt2 base test. begin-->
-	<package name="test" namespace="/" extends="struts-default" abstract="false">
-		<!--<default-class-ref class="test.StrutsTest"/>-->
-		<!--<default-action-ref name="struts_test" />-->
+	<!--<package name="test" namespace="/" extends="struts-default" abstract="false">
+		&lt;!&ndash;<default-class-ref class="test.StrutsTest"/>&ndash;&gt;
+		&lt;!&ndash;<default-action-ref name="struts_test" />&ndash;&gt;
 		<action name="struts_test" class="strutsTest" method="index">
 			<result name="index">/index.jsp</result>
 		</action>
 
-	</package>
+	</package>-->
 	<!--sturt2 base test. end-->
 
 </struts>

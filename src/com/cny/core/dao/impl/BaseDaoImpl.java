@@ -1,6 +1,7 @@
 package com.cny.core.dao.impl;
 
 import com.cny.core.dao.BaseDao;
+import org.hibernate.Query;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import java.io.Serializable;
@@ -17,7 +18,6 @@ public abstract class BaseDaoImpl<T> extends HibernateDaoSupport implements Base
 
     @Override
     public void save(T entity) {
-
         getHibernateTemplate().save(entity);
     }
 
@@ -38,6 +38,7 @@ public abstract class BaseDaoImpl<T> extends HibernateDaoSupport implements Base
 
     @Override
     public List<T> findObjects() {
-        return null;
+        Query query = getSession().createQuery("FROM " + clazz.getSimpleName());
+        return query.list();
     }
 }

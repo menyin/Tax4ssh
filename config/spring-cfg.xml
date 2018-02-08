@@ -25,7 +25,7 @@
 	<!-- 数据源配置 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3309/pj_ssh"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3309/Tax4ssh"></property>
 		<property name="user" value="root"></property>
 		<property name="password" value="root"></property>
 		<property name="initialPoolSize" value="3"></property>
@@ -78,7 +78,8 @@
 		<!--<property name="mappingResources">-->
 		<property name="mappingLocations">
 			<list>
-				<value>classpath:cny/model/*.hbm.xml</value>
+				<!--<value>classpath:cny/model/*.hbm.xml</value>-->
+				<value>classpath:com/cny/nsfw/*/entity/*.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -96,8 +97,10 @@
 	</tx:advice>
 	<!-- c. Aop配置 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* cny.service.*.*(..))" id="pt"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/>
+		<!--<aop:pointcut expression="execution(* cny.service.*.*(..))" id="pt"/>-->
+		<!--<aop:pointcut expression="execution(* com.cny.nsfw.user.service.impl.*.*(..))" id="serviceOperation"/>-->
+        <aop:pointcut id="serviceOperation" expression="bean(*Service)"/><!-- 扫描以Service结尾的bean -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
 	</aop:config>
 
 	<!-- IOC容器的配置： 要创建的所有的对象都配置在这里 引入其他配置文件-->
@@ -105,9 +108,24 @@
 	<import resource="cny/service/bean-service.xml"/>
 	<import resource="cny/controller/bean-controller.xml"/>
 	-->
-    <import resource="ssh/bean-test.xml"/>
+    <!--<import resource="com/cny/nsfw/user/conf/user-spring.xml"/>-->
+    <!--<import resource="classpath:com/cny/nsfw/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/cny/home/conf/*-spring.xml"/>
+    <import resource="classpath:com/cny/login/conf/*-spring.xml"/>
+	-->
+	<import resource="classpath:com/cny/*/*/conf/*-spring.xml"/>
+    <import resource="classpath:com/cny/*/conf/*-spring.xml"/>
 
 	<!-- ###########Spring与Hibernate整合  end########### -->
+
+	<!-- 所有业务dao的parent 注意：这个bean和那个BaseDao类其实没有任何关系-->
+	<bean id="baseDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 权限鉴定类 -->
+	<bean name="permissionCheck" class="com.cny.core.permission.impl.PermissionCheckImpl"/>
+
 
 </beans>
 
