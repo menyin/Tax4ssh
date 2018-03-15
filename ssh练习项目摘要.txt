@@ -1,0 +1,5 @@
+？ 一般实体类需要实现Serializable接口，而使用intellij生成的实体类是没有实现，怎么办？ 
+
+？在applicationContext.xml文件里通过properties文件将数据库配置抽取出来单独放置，以便更改维护。
+
+？intellij使用git进行版本管理。
